@@ -1,0 +1,187 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "container|align": "stretch",
+        "designer|userAlias": "newuser",
+        "designer|userClassName": "NewUser",
+        "layout": "vbox",
+        "title": "New Register",
+        "width": 466
+    },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "container|align": "string",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "NewRegister1",
+    "designerId": "da59c28a-54cf-44c6-93d4-67578e14e3fd",
+    "viewControllerInstanceId": "c47c9ad2-eb55-4a80-bab7-98cc60da91a8",
+    "viewModelInstanceId": "d94350a5-1b2a-440c-abe2-9bbb277400a6",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "fieldLabel": "First Name",
+                "name": "firstName"
+            },
+            "configAlternates": {
+                "allowBlank": "boolean",
+                "fieldLabel": "string",
+                "name": "string"
+            },
+            "name": "MyTextField2",
+            "designerId": "6db3df69-fca9-4e79-908c-0c3b7f6f311e"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "fieldLabel": "Other Names",
+                "name": "otherNames"
+            },
+            "configAlternates": {
+                "allowBlank": "boolean",
+                "fieldLabel": "string",
+                "name": "string"
+            },
+            "name": "MyTextField3",
+            "designerId": "d0522707-e35a-4f0e-9150-c39d2e397674"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "fieldLabel": "Gender",
+                "name": "gender"
+            },
+            "configAlternates": {
+                "allowBlank": "boolean",
+                "fieldLabel": "string",
+                "name": "string"
+            },
+            "name": "MyTextField4",
+            "designerId": "0bf4c794-4613-4031-8f33-d5bb7ea955c1"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "fieldLabel": "Telno",
+                "name": "smsTelno"
+            },
+            "configAlternates": {
+                "allowBlank": "boolean",
+                "fieldLabel": "string",
+                "name": "string"
+            },
+            "name": "MyTextField5",
+            "designerId": "73e5ec14-6ea5-4189-a3a3-9830fc94ae7b"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 45,
+                "style": "border-radius:4px;",
+                "text": "Add User"
+            },
+            "configAlternates": {
+                "height": "auto",
+                "style": "string",
+                "text": "string"
+            },
+            "name": "MyButton6",
+            "designerId": "ecc250b8-7b2e-49f9-88e8-ca4abf72907f",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "button",
+                            "e"
+                        ],
+                        "fn": "handler",
+                        "implHandler": [
+                            "var form = button.up('form').getForm();",
+                            "",
+                            "",
+                            "if(form.isValid()){",
+                            "    var data = form.getValues();",
+                            "    let name = data.firstName +'_'+ data.otherNames;",
+                            "    data.username = name.toLowerCase().split(' ').join('_');",
+                            "",
+                            "axios.post(`${config.ADMIN_API}/users`,data).then(response=>{",
+                            "        console.log(response);",
+                            "       let {data, status} = response;",
+                            "        if(data&& status==200){",
+                            "",
+                            "            Ext.toast('User Created !!!');",
+                            "            button.up('form').close();",
+                            "             Ext.getStore('UserStore').load();",
+                            "",
+                            "        }else{",
+                            "            Ext.Msg.alert('Error','Unable to create User');",
+                            "        }",
+                            "",
+                            "    }).catch(error=>{",
+                            "        Ext.Msg.alert('Error','Unable to create User');",
+                            "    });",
+                            "",
+                            "",
+                            "}else{",
+                            "    Ext.toast('Please Enter All Required Fields');",
+                            "}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "handler",
+                    "designerId": "13562343-e47c-47e4-a221-443f4f890a57"
+                }
+            ]
+        }
+    ]
+}

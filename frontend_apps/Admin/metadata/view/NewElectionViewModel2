@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "newuser",
+        "designer|userClassName": "NewElectionViewModel2"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "NewElectionViewModel2",
+    "designerId": "d94350a5-1b2a-440c-abe2-9bbb277400a6"
+}

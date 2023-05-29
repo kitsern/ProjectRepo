@@ -1,0 +1,315 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "container|align": "stretch",
+        "designer|userAlias": "newelection",
+        "designer|userClassName": "NewElection",
+        "layout": "vbox",
+        "title": "New Election",
+        "width": 466
+    },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "container|align": "string",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyForm1",
+    "designerId": "f09ef0ae-ef5a-430d-a85e-a5ce02097bec",
+    "viewControllerInstanceId": "6fa4f6fb-8540-41c3-95cc-eacb2ebdeb27",
+    "viewModelInstanceId": "660591c2-c017-4e65-a560-89c893771a02",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "fieldLabel": "Name",
+                "name": "electionName"
+            },
+            "configAlternates": {
+                "allowBlank": "boolean",
+                "fieldLabel": "string",
+                "name": "string"
+            },
+            "name": "MyTextField2",
+            "designerId": "55b693e6-d185-4035-b073-c3bf3096ccda"
+        },
+        {
+            "type": "Ext.form.field.TextArea",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "fieldLabel": "Description",
+                "name": "electionDescription"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "allowBlank": "boolean",
+                "name": "string"
+            },
+            "name": "MyTextArea",
+            "designerId": "d36b64e7-0828-42eb-a031-07694b489a23"
+        },
+        {
+            "type": "Ext.form.field.Date",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "fieldLabel": "Start  Date",
+                "format": "d-m-y",
+                "name": "start"
+            },
+            "configAlternates": {
+                "allowBlank": "boolean",
+                "fieldLabel": "string",
+                "format": "string",
+                "name": "string"
+            },
+            "name": "MyDateField",
+            "designerId": "9b07a7b6-f6b8-4889-8260-29842a754b91",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onDatefieldAfterRender",
+                        "implHandler": [
+                            "component.setMinValue(new Date());",
+                            "//HH = component;"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onDatefieldAfterRender",
+                    "designerId": "50dca6d0-fce4-42d5-82f5-b82156356fc7"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onDatefieldSelect",
+                        "implHandler": [
+                            "field.nextSibling().enable();",
+                            "field.nextSibling().setMinValue(value);"
+                        ],
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onDatefieldSelect",
+                    "designerId": "360659da-af97-48a3-8458-3c3c92bc90b9"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.Date",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "disabled": true,
+                "fieldLabel": "End  Date",
+                "format": "d-m-y",
+                "name": "end"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "allowBlank": "boolean",
+                "disabled": "boolean",
+                "format": "string",
+                "name": "string"
+            },
+            "name": "MyDateField1",
+            "designerId": "3150a403-3123-4251-952b-2f49b9c981a0"
+        },
+        {
+            "type": "Ext.form.field.Time",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "fieldLabel": "Start Time",
+                "itemId": "start_time",
+                "layout|flex": 1,
+                "name": "start_time"
+            },
+            "configAlternates": {
+                "allowBlank": "boolean",
+                "fieldLabel": "string",
+                "itemId": "string",
+                "layout|flex": "number",
+                "name": "string"
+            },
+            "name": "MyTimeField",
+            "designerId": "90d56195-cb51-4d93-84a1-c24e1b677b15"
+        },
+        {
+            "type": "Ext.form.field.Time",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "fieldLabel": "End Time",
+                "itemId": "end_time",
+                "layout|flex": 1,
+                "name": "end_time"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "layout|flex": "number",
+                "allowBlank": "boolean",
+                "itemId": "string",
+                "name": "string"
+            },
+            "name": "MyTimeField1",
+            "designerId": "40018aad-f778-4395-90ec-ff41f383df7e"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 45,
+                "style": "border-radius:4px;",
+                "text": "Add Election Instance"
+            },
+            "configAlternates": {
+                "height": "auto",
+                "style": "string",
+                "text": "string"
+            },
+            "name": "MyButton6",
+            "designerId": "bbaf590b-d3e8-40aa-afbe-3b18c1a4f9da",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "button",
+                            "e"
+                        ],
+                        "fn": "handler",
+                        "implHandler": [
+                            "var form = button.up('form').getForm();",
+                            "",
+                            "function formatter(date, time){",
+                            "    var newFormat = `${date.split('-')[1]}-${date.split('-')[0]}-${date.split('-')[2]}`;",
+                            "    var dateObj = new Date(newFormat);",
+                            "",
+                            "    dateObj =  new Date(dateObj.setHours(time.hours));",
+                            "    dateObj = new Date(dateObj.setMinutes(time.minutes));",
+                            "    return dateObj.toISOString();",
+                            "",
+                            "}",
+                            "if(form.isValid()){",
+                            "    var data = form.getValues();",
+                            "    start_time = button.up('newelection').down('#start_time').getValue();",
+                            "    var end_time = button.up('newelection').down('#end_time').getValue();",
+                            "",
+                            "",
+                            "    data.electionStartDate = formatter(data.start,{",
+                            "        hours:start_time.getHours(),",
+                            "        minutes:start_time.getMinutes()",
+                            "    });",
+                            "    data.electionEndDate  = formatter(data.end,{",
+                            "        hours:end_time.getHours(),",
+                            "        minutes:end_time.getMinutes()",
+                            "    });",
+                            "delete data.start;",
+                            "delete data.end;",
+                            "delete data.start_time;",
+                            "delete data.end_time;",
+                            "",
+                            "axios.post(`${config.ADMIN_API}/election-instances`,data).then(response=>{",
+                            "        console.log(response);",
+                            "       let {data, status} = response;",
+                            "        if(data&& status==200){",
+                            "",
+                            "            Ext.toast('Election Created !!!');",
+                            "            button.up('form').close();",
+                            "             Ext.getStore('ElectionsStore').load();",
+                            "",
+                            "        }else{",
+                            "            Ext.Msg.alert('Error','Unable to create Election');",
+                            "        }",
+                            "",
+                            "    }).catch(error=>{",
+                            "        Ext.Msg.alert('Error','Unable to create User');",
+                            "    });",
+                            "",
+                            "",
+                            "}else{",
+                            "    Ext.toast('Please Enter All Required Fields');",
+                            "}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "handler",
+                    "designerId": "37ec3e3f-de71-4878-95c5-ffed80596abd"
+                }
+            ]
+        }
+    ]
+}

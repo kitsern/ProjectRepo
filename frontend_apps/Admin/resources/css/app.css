@@ -1,0 +1,31 @@
+.x-form-trigger-wrap-default{
+    border-radius:5px;
+}
+.x-form-trigger-default {
+    width: 32px;
+    font: 16px/30px 'Font Awesome 5 Free';
+    background: #fff;
+    color: #919191;
+    border-radius: 5px;
+}
+.x-tab-bar-default {
+    background-color: #0f273c;
+}
+
+div,label,span,p{
+    font-weight:500;
+}
+
+input{
+    font-weight:400 ! important;
+}
+
+.orange{
+    color:orange;
+}
+.red{
+    color:red;
+}
+.green{
+    color:green;
+}

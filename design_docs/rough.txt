@@ -1,0 +1,8 @@
+-- Tables
+    - Users
+    - election_instances
+    - canditates
+    - polling stations
+    - registers
+    - votes
+    - voter_identification_numbers

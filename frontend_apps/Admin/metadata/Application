@@ -1,0 +1,29 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "name": "Admin",
+        "stores": [
+            "ElectionsStore",
+            "RegisterStore",
+            "UserStore"
+        ],
+        "views": [
+            "MyViewport",
+            "NewElection",
+            "NewRegister",
+            "NewUser"
+        ]
+    },
+    "configAlternates": {
+        "name": "string",
+        "views": "typedarray",
+        "stores": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application"
+}

@@ -1,0 +1,145 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "container|align": "stretch",
+        "designer|userAlias": "newregister",
+        "designer|userClassName": "NewRegister",
+        "layout": "vbox",
+        "title": "New Register",
+        "width": 466
+    },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "container|align": "string",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "NewElection1",
+    "designerId": "9100deca-72b5-4d90-ba6e-566562eab659",
+    "viewControllerInstanceId": "c66e1c1a-a46a-4f76-9ad6-4a81ef0a87fe",
+    "viewModelInstanceId": "190b3f30-0265-4d14-8029-fd0a96c9acc7",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "fieldLabel": "Name",
+                "name": "registerName"
+            },
+            "configAlternates": {
+                "allowBlank": "boolean",
+                "fieldLabel": "string",
+                "name": "string"
+            },
+            "name": "MyTextField2",
+            "designerId": "a1d818cd-8a2a-44f5-8ea1-f0e7924b55c6"
+        },
+        {
+            "type": "Ext.form.field.TextArea",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "fieldLabel": "Description",
+                "name": "registerDescription"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "allowBlank": "boolean",
+                "name": "string"
+            },
+            "name": "MyTextArea",
+            "designerId": "51d20586-8ecb-4b9a-ae7a-d4c5e9169317"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 45,
+                "style": "border-radius:4px;",
+                "text": "Add Register"
+            },
+            "configAlternates": {
+                "height": "auto",
+                "style": "string",
+                "text": "string"
+            },
+            "name": "MyButton6",
+            "designerId": "98d6238e-f5e6-4d30-b9c1-c534e11c846c",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "button",
+                            "e"
+                        ],
+                        "fn": "handler",
+                        "implHandler": [
+                            "var form = button.up('form').getForm();",
+                            "",
+                            "",
+                            "if(form.isValid()){",
+                            "    var data = form.getValues();",
+                            "",
+                            "axios.post(`${config.ADMIN_API}/voter-registers`,data).then(response=>{",
+                            "        console.log(response);",
+                            "       let {data, status} = response;",
+                            "        if(data&& status==200){",
+                            "",
+                            "            Ext.toast('Register Created !!!');",
+                            "            button.up('form').close();",
+                            "             Ext.getStore('RegisterStore').load();",
+                            "",
+                            "        }else{",
+                            "            Ext.Msg.alert('Error','Unable to create Register');",
+                            "        }",
+                            "",
+                            "    }).catch(error=>{",
+                            "        Ext.Msg.alert('Error','Unable to create User');",
+                            "    });",
+                            "",
+                            "",
+                            "}else{",
+                            "    Ext.toast('Please Enter All Required Fields');",
+                            "}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "handler",
+                    "designerId": "9a9ddce3-3b14-41c4-b26d-4d11c8004c68"
+                }
+            ]
+        }
+    ]
+}
